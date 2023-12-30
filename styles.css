@@ -1,0 +1,414 @@
+* {
+  font-family: Helvetica;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    max-width: 100%;
+  }
+}
+
+body {
+  background-color: rgb(248, 249, 251);
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-size: 35px;
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* Responsive font sizes also % o vh and vw*/
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+hr {
+  border-style: dashed;
+  color: darkgrey;
+}
+
+a {
+  font-size: 16px;
+  text-align: center;
+  color: rgb(49, 109, 241);
+}
+
+ul {
+  background-color: white;
+  text-align: left;
+  font-family: Helvetica;
+  font-size: 8px;
+  color: #000;
+  text-decoration: none;
+  list-style-type: none;
+  padding: auto;
+  border: 1px solid darkgrey;
+  line-height: 25px;
+}
+
+ul a {
+  color: #000;
+  text-decoration: none;
+  width: 150px;
+}
+
+fieldset {
+  box-sizing: border-box;
+  border-style: dotted;
+  border-color: darkgrey;
+  background-color: white;
+  max-width: 50%;
+  margin-bottom: 8px;
+  padding: 15px;
+}
+
+ol {
+  display: inline;
+  text-align: left;
+}
+
+ol button {
+  float: right;
+  margin-left: 10pt;
+  margin-top: -25px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+li {
+  font-size: 16px;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.settingsform,
+.commentform,
+.radioform {
+  box-sizing: border-box;
+  border-style: dotted;
+  border-color: darkgray;
+  background-color: white;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.friend-list {
+  max-width: 100%;
+  position: relative;
+  border-color: darkgray;
+}
+
+.sendfriendrequest form {
+  display: flex;
+}
+
+.sendfriendrequest form input {
+  display: inline-block;
+  border-radius: 6pt;
+  border: 1px solid #ccc;
+  margin-right: 10pt;
+  height: 25pt;
+  width: 400pt;
+}
+
+.sendfriendrequest form submit {
+  display: inline-block;
+}
+
+.friend-entry {
+  width: 250px;
+  text-align: left;
+}
+
+.badge {
+  float: right;
+  font-size: 16px;
+  background-color: rgb(000, 123, 255);
+  color: white;
+  padding: 0px 4px 0px 4px;
+  margin-right: -230px;
+  margin-left: 50px;
+  margin-top: 0px;
+}
+
+.registerform {
+  box-sizing: border-box;
+  border-style: dotted;
+  border-color: darkgray;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 10px;
+  max-width: 500px;
+}
+
+.registerform label {
+  display: inline-block;
+  text-align: right;
+  width: 150px;
+}
+
+.loginform {
+  box-sizing: border-box;
+  border-style: dotted;
+  border-color: darkgray;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  line-height: 10px;
+}
+
+.settingsform input,
+select {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.settingsform label {
+  display: inline-block;
+  text-align: right;
+  width: 150px;
+}
+
+.loginform label {
+  display: inline-block;
+  text-align: right;
+  width: 150px;
+}
+
+.radioform {
+  background-color: white;
+  text-align: left;
+}
+
+.profilecontent {
+  display: inline-flexbox;
+  padding: 0px 0px 0px 0px;
+}
+
+.squarephoto {
+  border-radius: 0;
+  max-width: 30%;
+  float: left;
+}
+
+.textfield {
+  background-color: white;
+  border: 1px solid lightgray;
+  max-width: 80%;
+  padding: 0px 10px 40px 10px;
+  margin: 0 auto 0 20pt;
+}
+
+.graybuttons {
+  background-color: rgb(201, 195, 195);
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 30px;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.graybuttons:hover {
+  background-color: rgb(167, 162, 162);
+  color: white;
+}
+
+.bluebuttons {
+  background-color: rgb(000, 123, 255);
+  font-size: 14px;
+  padding: 5px 30px;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.bluebuttons:hover {
+  background-color: rgb(0, 89, 184);
+  color: white;
+  border-style: none;
+}
+/*
+.container {
+  background-color: #fff;
+  padding: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+  margin-bottom: 20px;
+  width: 70%;
+  margin: 0pt auto 10pt;
+}
+.chat-box{
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+*/
+.chat-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 60%;
+  height: 100pt; /* Set your desired fixed height */
+  overflow-y: auto;
+}
+
+.container {
+  background-color: #fff;
+  padding: 0px;
+}
+.chat-message {
+  display: flex;
+  align-items: center;
+}
+
+.chat-sendername {
+  padding: 0px 5px;
+  width: 10%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.chat-sendername::after {
+  /*add ":" after senderName*/
+  content: ":";
+}
+
+.chat-timestamp {
+  font-size: 14px;
+  color: #ccc;
+  margin-left: auto; /*pushes the stamp to the left */
+  margin-right: 10px;
+}
+
+.new-message-div {
+  width: 65%;
+  padding: 10px;
+  margin: 10pt auto;
+  border-top: 1px solid #ccc;
+}
+
+.new-message-div form {
+  margin: 0pt auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0pt auto;
+}
+
+.new-message-div form input {
+  border-radius: 5pt;
+  border: 1px solid #ccc;
+  height: 23pt;
+  width: 385pt;
+  padding-left: 10pt;
+}
+.center {
+  text-align: center;
+}
+
+.new-message-div form button {
+  margin-left: 5pt;
+  height: 23pt;
+}
+
+#drinks {
+  text-transform: capitalize;
+}
+
+#login {
+  color: rgb(30, 69, 93);
+  text-decoration: none;
+}
+
+#login:hover {
+  color: saddlebrown;
+  text-decoration: underline;
+}
+
+#settings {
+  color: rgb(49, 109, 241);
+  text-decoration: none;
+}
+
+#logout,
+#goback,
+#profile {
+  color: rgb(49, 109, 241);
+  text-decoration: none;
+}
+
+#settings:hover,
+#logout:hover,
+#goback:hover,
+#profile:hover {
+  color: saddlebrown;
+  text-decoration: underline;
+}
+
+#backtochat {
+  color: rgb(49, 109, 241);
+  text-decoration: none;
+}
+
+#removefriend {
+  color: red;
+  text-decoration: none;
+}
+
+#removefriend:hover,
+#backtochat:hover {
+  color: saddlebrown;
+  text-decoration: underline;
+}
+
+#sendrequestbutton {
+  display: inline-block;
+  vertical-align: middle;
+}
+.warning-border {
+  border-color: red;
+}
+.friend-blue-button-position {
+  margin-left: 450px;
+}
+.friend-gray-button-position {
+  margin-left: 10px;
+}
+.request-li {
+  font-size: 16px;
+}
