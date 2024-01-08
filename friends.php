@@ -21,7 +21,7 @@ if (isset($_POST["action"])){ //aktionsziel von method=post
       $backendService->friendAccept($requestedUsername);
     }
   }
-  elseif ($_POST["action"] === "reject") {
+  elseif ($_POST["action"] === "decline") {
     $requestedUsername = $_POST["requested-username"] ?? ''; //wenn die requested-username keine value hat dann leereszeichen"
     if (!empty($requestedUsername)) { 
       $backendService->friendDismiss($requestedUsername);
@@ -83,10 +83,18 @@ foreach ($friendsData as $friendData) {   //in diesem foreach Function: friendsD
           <?php } ?>
           <?php foreach ($friends as $friend) { ?>
                 <?php if ($friend->getStatus() === "accepted") { ?>
+                  <?php 
+                  $unreadCounts = $backendService->getUnread();
+                  $friendUsername = $friend->getUsername();
+                  $unreadCount = isset($unreadCounts->$friendUsername)?$unreadCounts->$friendUsername : 0;
+                  ?>
                     <li class="list-group-item">
-                        <a class="list-group-item" href="chat.php?friend=<?= $friend-> getUsername() ?>"> 
-                          <?= $friend->getUsername() ?>
+                    <div class= "d-flex justify-content-between align-items-center w-100">
+                        <a class="me-3 text-decoration-none text-dark" href="chat.php?friend=<?= $friend-> getUsername() ?>"> 
+                          <?= $friend->getUsername()?>
                         </a>
+                        <span class="badge bg-primary rounded-pill"><?= $unreadCount ?></span>
+                      </div>
                     </li>
                 <?php } ?>
             <?php } ?>
@@ -180,9 +188,18 @@ foreach ($friendsData as $friendData) {   //in diesem foreach Function: friendsD
         friendList.innerHTML = `<li class="list-group-item">No Friends Found</li>`;
       } else {
         acceptedFriends.forEach(friend => {
+          let unreadCount = friend.unread || "0";
           friendList.innerHTML += `
-            <li class="list-group-item">
-              <a class="list-group-item" href="chat.php?friend=${friend.username}">${friend.username}</a>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <a class="text-decoration-none text-dark me-3" href="chat.php?friend=${friend.username}">${friend.username}</a>
+              <span class="badge bg-primary rounded-pill">${unreadCount}</span>
+              <?php 
+              //
+              /*if ($unreadCount > 0) { ?>  --> condition of unreadcount > 0 --> hier wird nicht gebraucht da Tom keine ungelesen Nachrichten von Backend besitzt.
+                <span class="badge bg-primary rounded-pill"><?= $unreadCount ?></span>
+              }
+              */
+              ?>
             </li>
           `;
         });
